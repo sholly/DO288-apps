@@ -27,7 +27,7 @@ pipeline {
                 echo '### Checking for compile errors ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn -s settings.xml -B clean compile
+                        mvn -B clean compile
                    '''
             }
         }
@@ -37,7 +37,7 @@ pipeline {
                 echo '### Running unit tests ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn -s settings.xml -B clean test
+                        mvn -B clean test
                    '''
             }
         }
@@ -47,7 +47,7 @@ pipeline {
                 echo '### Running pmd on code ###'
                 sh '''
                         cd ${APP_NAME}
-                        mvn -s settings.xml -B clean pmd:check
+                        mvn -B clean pmd:check
                    '''
             }
         }
